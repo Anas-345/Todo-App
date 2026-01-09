@@ -3,7 +3,14 @@ import UserInput from "./Components/UserInput";
 import Todos from "./Components/Todos";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(()=> {
+    return localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : []
+  }
+);
+
+  localStorage.setItem("todos", JSON.stringify(todos))
+
+  console.log(localStorage.getItem("todos"))
 
   function removeTodo(rTodo) {
     if (confirm("Are you sure?")) {
