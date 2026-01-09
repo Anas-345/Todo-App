@@ -18,21 +18,23 @@ export default function UserInput({ todo }) {
   }
 
   return (
-    <div className="flex justify-center items-center gap-3 p-6">
-      <input
-        type="text"
-        placeholder="Enter Todo"
-        value={value}
-        onChange={handleChange}
-        onKeyDown={(e) => e.key === 'Enter' && handleClick() }
-        className="px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 w-80 text-gray-700 placeholder-gray-400"
-      />
-      <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg cursor-pointer transition-colors duration-200 shadow-md hover:shadow-lg"
-        onClick={handleClick}
-      >
-        Add
-      </button>
+    <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
+      <div className="flex gap-3">
+        <input
+          type="text"
+          placeholder="What needs to be done?"
+          value={value}
+          onChange={handleChange}
+          onKeyDown={(e) => e.key === "Enter" && handleClick()}
+          className="flex-1 px-5 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-gray-700 placeholder-gray-400 transition-all duration-200"
+        />
+        <button
+          className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-8 py-3 rounded-xl cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          onClick={handleClick}
+        >
+          Add Task
+        </button>
+      </div>
     </div>
   );
 }
